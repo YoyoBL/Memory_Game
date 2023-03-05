@@ -74,8 +74,8 @@ function colorClick(num) {
       colorsToRemember++;
       numberOfColors = 0;
       setTimeout(function () {
-        $playArea.classList.toggle("bg-body");
         $playArea.classList.toggle("bg-green");
+        $playArea.classList.toggle("bg-body");
 
         resetPlayArea();
         aiColors();
