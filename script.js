@@ -1,6 +1,8 @@
 let $colors = document.querySelectorAll(".color");
 let $playArea = document.getElementById("play-area");
-let $playBtn = document.getElementById("play-btn");
+
+let $level = document.getElementById("level");
+let level = 1;
 
 function getRandomNum() {
   return Math.floor(Math.random() * 3);
@@ -13,7 +15,7 @@ let aiColorSequence = [];
 let playerColorSequence = [];
 
 function play() {
-  $playBtn.classList.add("d-none");
+  document.getElementById("play-btn").classList.add("d-none");
   aiColors();
 }
 
@@ -42,12 +44,13 @@ function aiColors() {
 
 // player click on color
 let numberOfColors = 0; // tracks how many colors the player picked
+let globalCounter = 0;
 
 function colorClick(num) {
   addColorToPlayArea(num);
   playerColorSequence.push(colors[num]);
   numberOfColors++;
-  let globalCounter = 0;
+  globalCounter++;
 
   if (numberOfColors === colorsToRemember) {
     let rightAnswers = 0;
@@ -58,15 +61,47 @@ function colorClick(num) {
     }
     if (rightAnswers === colorsToRemember) {
       setTimeout(function () {
-        $playArea.innerHTML = "Well Played! \n\r Moving to next level.";
+        $playArea.classList.toggle("bg-body");
+        $playArea.classList.add("bg-green");
+
+        level++;
+        $playArea.innerHTML = `Well Played! \n\r Moving to level ${level}.`;
         aiColorSequence = [];
         playerColorSequence = [];
+        globalCounter = 0;
+        $level.innerHTML = level;
       }, 500);
       colorsToRemember++;
       numberOfColors = 0;
       setTimeout(function () {
+        $playArea.classList.toggle("bg-body");
+        $playArea.classList.toggle("bg-green");
+
         resetPlayArea();
         aiColors();
+      }, 2500);
+    } else if (globalCounter === colorsToRemember) {
+      setTimeout(function () {
+        $playArea.classList.toggle("bg-body");
+
+        $playArea.classList.add("bg-danger", "text-white");
+        $playArea.innerHTML = "Game Over!";
+        aiColorSequence = [];
+        playerColorSequence = [];
+        globalCounter = 0;
+        numberOfColors = 0;
+        colorsToRemember = 3;
+        level = 1;
+        $level.innerHTML = level;
+      }, 500);
+      setTimeout(function () {
+        $playArea.classList.toggle("bg-body");
+        $playArea.classList.toggle("bg-danger", "text-white");
+
+        resetPlayArea();
+        $playArea.innerHTML = `<button onclick="play()" id="play-btn" class="btn btn-danger fs-3">
+        Play!
+      </button>`;
       }, 2500);
     }
   }

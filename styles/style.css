@@ -1,6 +1,7 @@
 .color {
   background-color: #a1a1a1;
   height: 70px;
+  cursor: pointer;
 }
 
 .purple {
@@ -13,4 +14,8 @@
 
 .cyan {
   background-color: rgb(27, 160, 255);
+}
+
+.bg-green {
+  background-color: #82ff22;
 }/*# sourceMappingURL=style.css.map */
