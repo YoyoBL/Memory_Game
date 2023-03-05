@@ -12,6 +12,7 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <script defer src="./script.js"></script>
     <link rel="stylesheet" href="./styles/style.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -22,7 +23,14 @@
     <div class="container">
       <!-- Ai game -->
       <div class="row mb-3" style="height: 150px; background-color: #979797">
-        <div class="col bg-body m-3" id="colorTable"></div>
+        <div
+          class="col bg-body m-3 d-flex justify-content-center align-items-center"
+          id="play-area"
+        >
+          <button onclick="play()" id="play-btn" class="btn btn-danger fs-3">
+            Play!
+          </button>
+        </div>
       </div>
 
       <!-- user options -->
