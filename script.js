@@ -62,7 +62,7 @@ function colorClick(num) {
     if (rightAnswers === colorsToRemember) {
       setTimeout(function () {
         $playArea.classList.toggle("bg-body");
-        $playArea.classList.add("bg-green");
+        $playArea.classList.toggle("bg-green");
 
         level++;
         $playArea.innerHTML = `Well Played! \n\r Moving to level ${level}.`;
@@ -84,7 +84,7 @@ function colorClick(num) {
       setTimeout(function () {
         $playArea.classList.toggle("bg-body");
 
-        $playArea.classList.add("bg-danger", "text-white");
+        $playArea.classList.toggle("bg-danger", "text-white");
         $playArea.innerHTML = "Game Over!";
         aiColorSequence = [];
         playerColorSequence = [];
@@ -96,7 +96,7 @@ function colorClick(num) {
       }, 500);
       setTimeout(function () {
         $playArea.classList.toggle("bg-body");
-        $playArea.classList.toggle("bg-danger", "text-white");
+        $playArea.classList.remove("bg-danger", "text-white");
 
         resetPlayArea();
         $playArea.innerHTML = `<button onclick="play()" id="play-btn" class="btn btn-danger fs-3">
