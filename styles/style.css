@@ -1,21 +1,54 @@
 .color {
   background-color: #a1a1a1;
   height: 70px;
+}
+
+.col.user {
+  display: flex;
+  justify-content: center;
+}
+
+.user-color {
+  background-color: #a1a1a1;
+  height: 8rem;
+  width: 8rem;
   cursor: pointer;
 }
 
 .purple {
-  background-color: rgb(180, 38, 159);
+  background-color: rgb(215, 39, 189);
+}
+.purple.user-color:hover {
+  background-color: rgb(188, 21, 163);
 }
 
 .orange {
   background-color: orange;
 }
+.orange.user-color:hover {
+  background-color: rgb(217, 143, 5);
+}
 
 .cyan {
   background-color: rgb(27, 160, 255);
 }
+.cyan.user-color:hover {
+  background-color: rgb(22, 127, 202);
+}
 
 .bg-green {
   background-color: #82ff22;
+}
+
+#play-btn {
+  animation: startAnimation 2s ease-in-out infinite;
+}
+
+@keyframes startAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }/*# sourceMappingURL=style.css.map */

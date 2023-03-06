@@ -20,35 +20,54 @@
     <title>Memory Game</title>
   </head>
   <body class="mt-3">
-    <div class="container">
+    <div class="container col-md-5">
       <!-- Ai game -->
       <div class="row mb-3" style="height: 150px; background-color: #aaaaaa">
         <div
           class="col bg-body m-3 d-flex justify-content-center align-items-center"
           id="play-area"
         >
-          <button onclick="play()" id="play-btn" class="btn btn-danger fs-3">
-            Play!
+          <button
+            onclick="play()"
+            id="play-btn"
+            class="btn btn-danger p-4 rounded-circle fs-3"
+          >
+            Start!
           </button>
         </div>
+      </div>
+      <div class="row mb-3 text-center">
+        <div class="col">
+          <div class="fs-1 text-danger fw-bold" id="secCounter"></div>
+        </div>
+      </div>
+
+      <div class="row text-center mb-5">
+        <div class="col fs-3">Level <span id="level">1</span></div>
       </div>
 
       <!-- user options -->
       <div class="row mb-3">
-        <div class="col">
-          <div class="color purple" onclick="colorClick(0, aiColors)"></div>
+        <div class="col user">
+          <div
+            class="user-color user-color purple rounded-circle"
+            onclick="colorClick(0, aiColors)"
+          ></div>
         </div>
-        <div class="col">
-          <div class="color orange" onclick="colorClick(1, aiColors)"></div>
+        <div class="col user">
+          <div
+            class="user-color orange rounded-circle"
+            onclick="colorClick(1, aiColors)"
+          ></div>
         </div>
-        <div class="col">
-          <div class="color cyan" onclick="colorClick(2, aiColors)"></div>
+        <div class="col user col-12">
+          <div
+            class="user-color cyan rounded-circle"
+            onclick="colorClick(2, aiColors)"
+          ></div>
         </div>
       </div>
 
-      <div class="row text-center">
-        <div class="col fs-3">Level <span id="level">1</span></div>
-      </div>
       <div class="row text-end">
         <div
           class="col text-black-50"
