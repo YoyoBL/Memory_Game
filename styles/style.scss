@@ -18,7 +18,7 @@
 .purple {
   background-color: rgb(215, 39, 189);
 
-  &.user-color:hover {
+  &.user-color:active {
     background-color: rgb(188, 21, 163);
   }
 }
@@ -26,7 +26,7 @@
 .orange {
   background-color: orange;
 
-  &.user-color:hover {
+  &.user-color:active {
     background-color: rgb(217, 143, 5);
   }
 }
@@ -34,7 +34,7 @@
 .cyan {
   background-color: rgb(27, 160, 255);
 
-  &.user-color:hover {
+  &.user-color:active {
     background-color: rgb(22, 127, 202);
   }
 }
